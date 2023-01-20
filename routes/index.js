@@ -1,3 +1,5 @@
+const routeAuth = require("./route.auth");
+
 module.exports = (app) => {
 
     app.use("/*", (req, res, next) => {
@@ -5,5 +7,5 @@ module.exports = (app) => {
         console.log(fullUrl);
         next()
     });
-    app.get("/sign_up", (req, res)=>console.log("sign up"))
+    app.use("/auth", routeAuth)
 };
