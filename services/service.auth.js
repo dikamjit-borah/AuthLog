@@ -3,7 +3,7 @@ const { User } = require("../schemas/schema.user")
 module.exports = {
     getUser: async function (email) {
         try {
-            return await User.findOne({ email })
+            return await User.findOne({ email }, { email: 1, password: 1 })
         } catch (error) {
             throw new Error(error.message)
         }
