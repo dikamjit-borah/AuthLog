@@ -2,6 +2,7 @@ require("dotenv").config()
 
 const cors = require("cors")
 const express = require("express")
+const routes = require("./routes")
 
 const port = process.env.port || 8081;
 const app = express()
@@ -16,7 +17,7 @@ app.listen(port, () => {
   });
 });
 
-
+routes(app)
 
 
 
