@@ -1,10 +1,16 @@
+const serviceAuth = require("../services/service.auth")
+
 module.exports = {
     signUp: async function (req, res) {
         try {
-            res.send("sign up success")
+            const details = { name, email, password, age, address } = { ...req.body }
+            const saveUser = await serviceAuth.saveUser(details)
+            if (saveUser) res.send("sign up success")
 
         } catch (error) {
-            res.send("sign up error")
+            console.log(error);
+            res.send("sign up failed")
+
         }
     },
 
