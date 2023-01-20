@@ -8,4 +8,9 @@ module.exports = {
         age: Joi.number().required(),
         address: Joi.string().required(),
     }),
+
+    schemaLogIn: Joi.object({
+        email: Joi.string().email().required(),
+        password: Joi.string().required(),
+    }),
 }
